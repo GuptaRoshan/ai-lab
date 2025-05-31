@@ -1,0 +1,1 @@
+[Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/dictionaries)
