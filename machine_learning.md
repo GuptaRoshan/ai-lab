@@ -3,8 +3,7 @@
 
 **AI Venn Diagram**
 
-
-
+<img src="https://github.com/user-attachments/assets/eda348bc-9fd7-4661-8bdb-01a383bed3e8" width="500"/>
 
 
 # Math Foundations
@@ -33,7 +32,7 @@
 * Loss functions, optimizers
 
 
-# Natural Language Processing (NLP)*
+# Natural Language Processing (NLP)
 
 * Text preprocessing (tokenization, stemming, etc.)
 * Word embeddings (Word2Vec, GloVe)
