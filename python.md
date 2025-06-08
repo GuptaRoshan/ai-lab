@@ -181,15 +181,193 @@ print(result)  # Output: 25
 
 ### Lists and Tuples
 
+#### Creation
+
+```python
+my_list = [1, 2, 3]
+empty_list = list()
+```
+
+#### Accessing Items
+
+```python
+my_list[0]     # First item
+my_list[-1]    # Last item
+```
+
+#### Modifying
+
+```python
+my_list[0] = 10         # Change item
+my_list.append(4)       # Add at end
+my_list.insert(1, 99)   # Insert at position
+my_list.extend([5, 6])  # Extend with another list
+```
+
+#### Removing
+
+```python
+my_list.remove(10)      # Remove first match
+del my_list[0]          # Delete by index
+my_list.pop()           # Pop last item
+my_list.clear()         # Empty the list
+```
+
+#### Searching
+
+```python
+my_list.index(99)       # Index of value
+99 in my_list           # Check existence
+my_list.count(2)        # Count occurrences
+```
+
+#### Sorting
+
+```python
+my_list.sort()          # In-place sort
+sorted_list = sorted(my_list)  # New sorted list
+my_list.reverse()       # Reverse in place
+```
+
+#### Slicing
+
+```python
+my_list[1:3]            # Slice from index 1 to 2
+my_list[:3]             # From start to index 2
+my_list[::2]            # Every 2nd element
+```
+
+#### Looping
+
+```python
+for item in my_list:
+    print(item)
+```
+
 ### Dictionaries
+
+
+| **Category**         | **Code / Example**                                              | **Description**                      |
+|----------------------|-----------------------------------------------------------------|--------------------------------------|
+| **Creation**         | `my_dict = {'a': 1, 'b': 2}`<br>`dict(x=3, y=4)`                | Create a dictionary                  |
+| **Accessing**        | `my_dict['a']`<br>`my_dict.get('a')`<br>`my_dict.get('x', 0)`   | Get value; safe get with default     |
+| **Adding/Updating**  | `my_dict['c'] = 3`<br>`my_dict.update({'d': 4})`                | Add or update key-value pairs        |
+| **Removing**         | `del my_dict['a']`<br>`my_dict.pop('b')`<br>`my_dict.popitem()` | Remove by key; pop last item         |
+| **Check Existence**  | `'a' in my_dict`<br>`'z' not in my_dict`                        | Check if key exists                  |
+| **Dictionary Views** | `my_dict.keys()`<br>`my_dict.values()`<br>`my_dict.items()`     | Get keys, values, items              |
+| **Looping**          | `for k in my_dict:`<br>`for k, v in my_dict.items():`           | Iterate over keys or key-value pairs |
+| **Comprehension**    | `{x: x**2 for x in range(3)}`                                   | Dict comprehension                   |
+| **Nested Dict**      | `nested['person']['name']`                                      | Accessing values in nested dicts     |
+| **Copying**          | `copy = my_dict.copy()`<br>`deepcopy = copy.deepcopy(my_dict)`  | Shallow and deep copy                |
+
 
 ### Sets
 
+
+| **Category**          | **Code / Example**                                                                             | **Description**                          |                      |
+|-----------------------|------------------------------------------------------------------------------------------------|------------------------------------------|----------------------|
+| **Creation**          | `my_set = {1, 2, 3}`<br>`empty_set = set()`                                                    | Create a set; use `set()` for empty      |                      |
+| **Accessing**         | *(Not indexable like lists)*                                                                   | Sets are unordered, no indexing          |                      |
+| **Adding**            | `my_set.add(4)`                                                                                | Add one item                             |                      |
+| **Updating**          | `my_set.update([5, 6])`                                                                        | Add multiple items                       |                      |
+| **Removing**          | `my_set.remove(2)`<br>`my_set.discard(3)`                                                      | Remove item (error if not found vs safe) |                      |
+| **Pop & Clear**       | `my_set.pop()`<br>`my_set.clear()`                                                             | Pop random item, remove all              |                      |
+| **Membership Test**   | `2 in my_set`<br>`7 not in my_set`                                                             | Check if item exists                     |                      |
+| **Set Operations**    | `a \ b  (union) ,  a & b (intersection) ,  a - b (difference) ,  a ^ b (symmetric difference)` | Combine/compare sets                     |                      |
+| **Set Comparisons**   | `a == b`<br>`a.issubset(b)`<br>`a.issuperset(b)`<br>`a.isdisjoint(b)`                          | Equality and subset checks               |                      |
+| **Looping**           | `for item in my_set:`                                                                          | Iterate over items                       |                      |
+| **Set Comprehension** | `{x for x in range(5) if x % 2 == 0}`                                                          | Set comprehension                        |                      |
+| **Conversion**        | `set([1, 2, 2, 3])`                                                                            | Remove duplicates from list              |                      |
+
+
 ### Comprehensions
+
+
+#### Python Comprehension Cheat Sheet
+
+| **Type**      | **Syntax**                            | **Description / Example**               |
+|---------------|---------------------------------------|-----------------------------------------|
+| **List**      | `[x for x in iterable]`               | Basic list comprehension                |
+|               | `[x for x in range(5) if x % 2 == 0]` | With condition: `[0, 2, 4]`             |
+| **Set**       | `{x for x in iterable}`               | Creates a set with unique elements      |
+| **Dict**      | `{k: v for k, v in iterable}`         | Builds a dictionary from iterable pairs |
+|               | `{x: x**2 for x in range(4)}`         | `{0: 0, 1: 1, 2: 4, 3: 9}`              |
+| **Generator** | `(x for x in iterable)`               | Lazy-evaluated generator                |
+
+
+#### With `if-else` inside comprehension
+
+| **Example**                                              | **Explanation**                    |
+|----------------------------------------------------------|------------------------------------|
+| `[x if x % 2 == 0 else -x for x in range(5)]`            | Conditional expression inside list |
+| `{x: 'even' if x % 2 == 0 else 'odd' for x in range(3)}` | Dict with conditional values       |
+
+
+#### Nested Comprehensions
+
+| **Example**                                     | **Creates**                                  |
+|-------------------------------------------------|----------------------------------------------|
+| `[[i * j for j in range(3)] for i in range(3)]` | 2D list: `[[0, 0, 0], [0, 1, 2], [0, 2, 4]]` |
+
+
 
 ### Strings
 
+| **Category**             | **Code / Example**                                        | **Description**                                    |
+|--------------------------|-----------------------------------------------------------|----------------------------------------------------|
+| **Creation**             | `'hello'`, `"world"`<br>`'''multi'''`, `"""line"""`       | Define single-line and multi-line strings          |
+| **Accessing**            | `s[0]`, `s[-1]`                                           | Indexing: first and last character                 |
+| **Slicing**              | `s[1:4]`, `s[:3]`, `s[::2]`                               | Substring extraction                               |
+| **Length**               | `len(s)`                                                  | Get length of string                               |
+| **Concatenation**        | `'Hi ' + 'there'`                                         | Combine strings                                    |
+| **Repetition**           | `'ha' * 3`                                                | Repeat string: `'hahaha'`                          |
+| **Membership**           | `'a' in s`, `'z' not in s`                                | Check if a character/substring exists              |
+| **Case Conversion**      | `s.upper()`, `s.lower()`<br>`s.title()`, `s.capitalize()` | Change string casing                               |
+| **Trimming**             | `s.strip()`, `s.lstrip()`, `s.rstrip()`                   | Remove whitespace                                  |
+| **Finding/Substitution** | `s.find('a')`, `s.replace('a', 'b')`                      | Search and replace substrings                      |
+| **Splitting & Joining**  | `s.split(',')`, `' '.join(list)`                          | Split string into list / join list into string     |
+| **Formatting**           | `f"Name: {name}"`<br>`"Age: {}".format(age)`              | f-strings and `.format()` for formatting           |
+| **Escape Sequences**     | `\n` (newline), `\t` (tab), `\\` (backslash)              | Special characters                                 |
+| **Immutability**         | ❌ `s[0] = 'H'`                                            | Strings are immutable — cannot be changed in-place |
+| **Looping**              | `for c in s:`                                             | Iterate over characters                            |
+
+
+
 ### Args and Kwargs
+
+#### 1. `*args` (Non-keyword Variable Arguments)
+
+* Collects **extra positional arguments** as a **tuple**.
+* Useful when you want to pass any number of positional arguments.
+
+```python
+def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)
+# Output:
+# 1
+# 2
+# 3
+```
+
+#### 2. `**kwargs` (Keyword Variable Arguments)
+
+* Collects **extra keyword arguments** as a **dictionary**.
+* Useful when you want to handle named arguments dynamically.
+
+```python
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+my_function(name="Alice", age=30)
+# Output:
+# name = Alice
+# age = 30
+```
+
 
 ### Built-in Data Structures
 
