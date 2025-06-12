@@ -283,8 +283,6 @@ for item in my_list:
 ### Comprehensions
 
 
-#### Python Comprehension Cheat Sheet
-
 | **Type**      | **Syntax**                            | **Description / Example**               |
 |---------------|---------------------------------------|-----------------------------------------|
 | **List**      | `[x for x in iterable]`               | Basic list comprehension                |
@@ -387,3 +385,95 @@ my_function(name="Alice", age=30)
 | `OrderedDict` | Dict that remembers insert order        | ✅        | ✅        | (Preserved in 3.7+ by default)             | `from collections import OrderedDict; od = OrderedDict(); od['a'] = 1`                    |
 | `NamedTuple`  | Tuple with named fields                 | ❌        | ✅        | Readable, structured records               | `from collections import namedtuple; Point = namedtuple('Point', 'x y'); p = Point(1, 2)` |
 | `heapq`       | Heap queue (priority queue)             | ✅        | ❌        | Min-heap operations                        | `import heapq; h = [3, 1, 2]; heapq.heapify(h); heapq.heappop(h)`                         |
+
+
+### Types
+
+**Example of Type Hints:**
+
+```python
+def add(x: int, y: int) -> int:
+    return x + y
+```
+
+**Type Annotations for Variables:**
+
+```python
+age: int = 30
+name: str = "Alice"
+```
+
+**For Collections:**
+
+```python
+from typing import List, Dict
+
+names: List[str] = ["Alice", "Bob"]
+scores: Dict[str, int] = {"Alice": 90, "Bob": 85}
+```
+
+### Core OOP Concepts
+
+1. **Class and Object**
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+p = Person("Alice", 30)
+print(p.name)  # Output: Alice
+```
+
+2. **Inheritance**
+
+```python
+class Employee(Person):
+    def __init__(self, name, age, emp_id):
+        super().__init__(name, age)
+        self.emp_id = emp_id
+```
+
+3. **Encapsulation**
+
+* Using **private** variables and methods (conventionally with `_` or `__` prefix)
+
+```python
+class BankAccount:
+    def __init__(self):
+        self.__balance = 0
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+```
+
+4. **Polymorphism**
+
+* Method Overriding:
+
+```python
+class Animal:
+    def speak(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def speak(self):
+        return "Bark"
+```
+
+5. **Abstraction**
+
+* Using abstract base classes:
+
+```python
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def drive(self):
+        pass
+```
