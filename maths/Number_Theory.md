@@ -122,7 +122,6 @@ A positive integer that is greater than 1 and is not prime is called composite.
 - **Modular Division**: `(a / b) % m = ((a % m) * (b^(-1) % m)) % m`
 - **Modular Exponentiation**: `(a ^ b) % m = ((a % m) ^ b) % m`
 - **Modular Inverse**: `a^(-1) % m = a^(m-2) % m` (Fermat's Little Theorem)
-- **Divisibility Check** : `if a mod m = 0 then a is divisible by m`
 
 
  
