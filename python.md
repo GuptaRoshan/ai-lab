@@ -131,7 +131,7 @@ lambda arguments: expression
 - `arguments` are the input parameters.
 - `expression` is a single expression executed and returned.
 
-#### ✅ **Basic Example**
+#### **Basic Example**
 
 ```python
 add = lambda x, y: x + y
@@ -145,7 +145,7 @@ def add(x, y):
     return x + y
 ```
 
-#### ✅ **Lambda with `map()`**
+#### **Lambda with `map()`**
 
 ```python
 nums = [1, 2, 3, 4]
@@ -153,7 +153,7 @@ squares = list(map(lambda x: x**2, nums))
 print(squares)  # Output: [1, 4, 9, 16]
 ```
 
-#### ✅ **Lambda with `filter()`**
+#### **Lambda with `filter()`**
 
 ```python
 nums = [1, 2, 3, 4, 5, 6]
@@ -161,7 +161,7 @@ even_nums = list(filter(lambda x: x % 2 == 0, nums))
 print(even_nums)  # Output: [2, 4, 6]
 ```
 
-#### ✅ **Lambda with `sorted()`**
+#### **Lambda with `sorted()`**
 
 ```python
 points = [(2, 3), (1, 9), (4, 1)]
@@ -169,7 +169,7 @@ sorted_points = sorted(points, key=lambda point: point[1])
 print(sorted_points)  # Output: [(4, 1), (2, 3), (1, 9)]
 ```
 
-#### ✅ **Lambda Inside Function Calls**
+#### **Lambda Inside Function Calls**
 
 ```python
 def apply_operation(x, func):

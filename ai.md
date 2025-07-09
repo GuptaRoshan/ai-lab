@@ -13,16 +13,6 @@
 * **Probability & Statistics** → Bayes’ theorem, distributions, expectation, variance
 * **Optimization** → Gradient descent, loss functions
 
-
-# Core AI / ML Concepts
-
-* Supervised / Unsupervised learning
-* Classification & regression
-* Decision trees, SVMs, k-NN
-* Clustering (k-means, DBSCAN)
-* Model evaluation: accuracy, precision, recall, AUC
-
-
 # Deep Learning
 
 * Neural networks (perceptrons → deep nets)
@@ -31,17 +21,7 @@
 * RNNs / LSTMs (for sequences)
 * Loss functions, optimizers
 
-
-# Natural Language Processing (NLP)
-
-* Text preprocessing (tokenization, stemming, etc.)
-* Word embeddings (Word2Vec, GloVe)
-* Transformers: Attention mechanism
-* BERT, GPT, T5 models
-
-
 # LLMs and Foundation Models
-
 
 ## **Fundamentals of LLMs**
 
