@@ -12,7 +12,7 @@ This allows the file to be:
 - **Run directly** → executes `main()`.
 - **Imported as a module** → does **not** execute `main()`.
 
-### 👇 Example:
+### 👇 Example
 
 ```python
 def main():
@@ -24,14 +24,14 @@ if __name__ == "__main__":
     main()
 ```
 
-### Output when run directly:
+### Output when run directly
 
 ```
 Top-level code runs.
 This is the main function.
 ```
 
-### Output when imported into another script:
+### Output when imported into another script
 
 ```
 Top-level code runs.
@@ -40,7 +40,6 @@ Top-level code runs.
 (Note: `main()` does **not** run unless called)
 
 ### For Loop
-
 
 **1. Simple Loop**
 
@@ -51,7 +50,6 @@ for fruit in fruits:
     print(fruit)
 ```
 
-
 **2. Loop with Index using `range()`**
 
 ```python
@@ -61,7 +59,6 @@ for i in range(len(fruits)):
     print(i, fruits[i])
 ```
 
-
 **3. Using `enumerate()` for Index + Value**
 
 ```python
@@ -70,7 +67,6 @@ fruits = ["apple", "banana", "cherry"]
 for index, fruit in enumerate(fruits):
     print(f"Index {index}: {fruit}")
 ```
-
 
 ### While Loop
 
@@ -85,8 +81,6 @@ while count <= 5:
 
 ### Conditions
 
-
-
 ### 🧮 1. **Bitwise Operators**
 
 | Operator | Name        | Example    | Result |     |     |
@@ -97,7 +91,6 @@ while count <= 5:
 | `~`      | Bitwise NOT | `~5`       | `-6`   |     |     |
 | `<<`     | Left Shift  | `5 << 1`   | `10`   |     |     |
 | `>>`     | Right Shift | `5 >> 1`   | `2`    |     |     |
-
 
 ### ⚖️ 2. **Comparison Operators**
 
@@ -117,7 +110,6 @@ while count <= 5:
 | `and`    | Logical AND | `True and False` | `False` |
 | `or`     | Logical OR  | `True or False`  | `True`  |
 | `not`    | Logical NOT | `not True`       | `False` |
-
 
 ### lambda
 
@@ -246,7 +238,6 @@ for item in my_list:
 
 ### Dictionaries
 
-
 | **Category**         | **Code / Example**                                              | **Description**                      |
 |----------------------|-----------------------------------------------------------------|--------------------------------------|
 | **Creation**         | `my_dict = {'a': 1, 'b': 2}`<br>`dict(x=3, y=4)`                | Create a dictionary                  |
@@ -260,9 +251,7 @@ for item in my_list:
 | **Nested Dict**      | `nested['person']['name']`                                      | Accessing values in nested dicts     |
 | **Copying**          | `copy = my_dict.copy()`<br>`deepcopy = copy.deepcopy(my_dict)`  | Shallow and deep copy                |
 
-
 ### Sets
-
 
 | **Category**          | **Code / Example**                                                                             | **Description**                          |                      |
 |-----------------------|------------------------------------------------------------------------------------------------|------------------------------------------|----------------------|
@@ -279,9 +268,7 @@ for item in my_list:
 | **Set Comprehension** | `{x for x in range(5) if x % 2 == 0}`                                                          | Set comprehension                        |                      |
 | **Conversion**        | `set([1, 2, 2, 3])`                                                                            | Remove duplicates from list              |                      |
 
-
 ### Comprehensions
-
 
 | **Type**      | **Syntax**                            | **Description / Example**               |
 |---------------|---------------------------------------|-----------------------------------------|
@@ -292,7 +279,6 @@ for item in my_list:
 |               | `{x: x**2 for x in range(4)}`         | `{0: 0, 1: 1, 2: 4, 3: 9}`              |
 | **Generator** | `(x for x in iterable)`               | Lazy-evaluated generator                |
 
-
 #### With `if-else` inside comprehension
 
 | **Example**                                              | **Explanation**                    |
@@ -300,14 +286,11 @@ for item in my_list:
 | `[x if x % 2 == 0 else -x for x in range(5)]`            | Conditional expression inside list |
 | `{x: 'even' if x % 2 == 0 else 'odd' for x in range(3)}` | Dict with conditional values       |
 
-
 #### Nested Comprehensions
 
 | **Example**                                     | **Creates**                                  |
 |-------------------------------------------------|----------------------------------------------|
 | `[[i * j for j in range(3)] for i in range(3)]` | 2D list: `[[0, 0, 0], [0, 1, 2], [0, 2, 4]]` |
-
-
 
 ### Strings
 
@@ -329,14 +312,12 @@ for item in my_list:
 | **Immutability**         | ❌ `s[0] = 'H'`                                            | Strings are immutable — cannot be changed in-place |
 | **Looping**              | `for c in s:`                                             | Iterate over characters                            |
 
-
-
 ### Args and Kwargs
 
 #### 1. `*args` (Non-keyword Variable Arguments)
 
-* Collects **extra positional arguments** as a **tuple**.
-* Useful when you want to pass any number of positional arguments.
+- Collects **extra positional arguments** as a **tuple**.
+- Useful when you want to pass any number of positional arguments.
 
 ```python
 def my_function(*args):
@@ -352,8 +333,8 @@ my_function(1, 2, 3)
 
 #### 2. `**kwargs` (Keyword Variable Arguments)
 
-* Collects **extra keyword arguments** as a **dictionary**.
-* Useful when you want to handle named arguments dynamically.
+- Collects **extra keyword arguments** as a **dictionary**.
+- Useful when you want to handle named arguments dynamically.
 
 ```python
 def my_function(**kwargs):
@@ -365,7 +346,6 @@ my_function(name="Alice", age=30)
 # name = Alice
 # age = 30
 ```
-
 
 ### Built-in Data Structures
 
@@ -385,7 +365,6 @@ my_function(name="Alice", age=30)
 | `OrderedDict` | Dict that remembers insert order        | ✅        | ✅        | (Preserved in 3.7+ by default)             | `from collections import OrderedDict; od = OrderedDict(); od['a'] = 1`                    |
 | `NamedTuple`  | Tuple with named fields                 | ❌        | ✅        | Readable, structured records               | `from collections import namedtuple; Point = namedtuple('Point', 'x y'); p = Point(1, 2)` |
 | `heapq`       | Heap queue (priority queue)             | ✅        | ❌        | Min-heap operations                        | `import heapq; h = [3, 1, 2]; heapq.heapify(h); heapq.heappop(h)`                         |
-
 
 ### Types
 
@@ -437,7 +416,7 @@ class Employee(Person):
 
 3. **Encapsulation**
 
-* Using **private** variables and methods (conventionally with `_` or `__` prefix)
+- Using **private** variables and methods (conventionally with `_` or `__` prefix)
 
 ```python
 class BankAccount:
@@ -453,7 +432,7 @@ class BankAccount:
 
 4. **Polymorphism**
 
-* Method Overriding:
+- Method Overriding:
 
 ```python
 class Animal:
@@ -467,7 +446,7 @@ class Dog(Animal):
 
 5. **Abstraction**
 
-* Using abstract base classes:
+- Using abstract base classes:
 
 ```python
 from abc import ABC, abstractmethod
